@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Valentine's Day Azinino!</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: beige; /* Changed background color to beige */
+  }
+  
+  .card {
+    background-color: #f5d3d3;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    margin: 50px auto;
+  }
+  
+  h1 {
+    color: darkred;
+  }
+  
+  p {
+    color: #000000;
+  }
+
+  #heart {
+    width: 150px;
+    margin-top: 20px;
+    animation: heartbeat 1s infinite;
+  }
+
+  @keyframes heartbeat {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes flowerFall {
+    0% {
+      transform: translateY(-50px) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(50vh) rotate(180deg);
+      opacity: 0;
+    }
+  }
+
+  .flower {
+    position: absolute;
+    top: -25px;
+    left: calc(50% - 25px);
+    animation: flowerFall 4s linear infinite;
+  }
+
+  
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>Happy Valentine's Day!</h1>
+  <p>Dear Amdra,</p>
+  <p>I just wanted to take a moment to tell you how much your friendship means to me.. Thank you for always being there for me.. through the good times and the bad.. You bring so much joy and laughter into my life.. and I am incredibly grateful to have you as my friend. llah ykhalik liya Yarbi Biiiig Love for You</p>
+ 
+  <img src="Heart.png" alt="heart" id="heart"> <!-- Modified heart image -->
+</div>
+<script>
+  function getRandomNumber(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+  
+  function createFlower() {
+    var flower = document.createElement("img");
+    flower.src = "flowers.png";
+    flower.className = "flower";
+    flower.style.width = getRandomNumber(600, 400) + "px";
+    flower.style.top = getRandomNumber(-100, -50) + "vh";
+    flower.style.left = getRandomNumber(0, window.innerWidth - 50) + "px";
+    document.body.appendChild(flower);
+  }
+  
+  function createFlowers() {
+    setInterval(createFlower, 1000);
+  }
+  
+  window.onload = createFlowers;
+</script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>

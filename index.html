@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zin</title>
+</head>
+<body>
+    <style>
+       body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: beige; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    text-align: center;
+  }
+  .card {
+    background-color: rgb(202, 182, 116);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 500px;
+    margin: 50px auto;
+  }
+  .button {
+    font-size: 24px;
+    padding: 15px 30px;
+    background-color: darkred;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .button:hover {
+    background-color: #a80000;
+  }
+  h1 {
+    color: rgb(197, 3, 3);
+  }
+  
+  p {
+    color: #000000;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  @keyframes flowerFall {
+    0% {
+      transform: translateY(-50px) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(50vh) rotate(180deg);
+      opacity: 0;
+    }
+  }
+
+  .flower {
+    position: absolute;
+    top: -25px;
+    left: calc(50% - 25px);
+    animation: flowerFall 4s linear infinite;
+  }
+  .button-container {
+    display: flex;
+    justify-content: center;
+  }
+  .container {
+    text-align: center;
+    margin-bottom: 50px; /* Added for space between button and text */
+    animation: fadeIn 2s ease-in-out; /* Animation effect */
+  }
+
+
+    </style>
+<div class="card">
+  <h1>Happy Valentine's Day!</h1>
+
+    <p>Fin azin chno nta mat3tinach chi baysa!</p> <!-- Updated paragraph -->
+</div>
+  <div class="button-container">
+    <button class="button" onclick="redirectToNextPage()">Click here Azinino</button>
+  </div>
+
+  <script>
+    function getRandomNumber(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+    
+    function createFlower() {
+      var flower = document.createElement("img");
+      flower.src = "flowers.png";
+      flower.className = "flower";
+      flower.style.width = getRandomNumber(600, 400) + "px";
+      flower.style.top = getRandomNumber(-100, -50) + "vh";
+      flower.style.left = getRandomNumber(0, window.innerWidth - 50) + "px";
+      document.body.appendChild(flower);
+    }
+    
+    function createFlowers() {
+      setInterval(createFlower, 1000);
+    }
+    
+    window.onload = createFlowers;
+  </script>
+   <script>
+    function redirectToNextPage() {
+      window.location.href = "valentine.html";
+    }
+    </script>
+
+</body>
+</html>
